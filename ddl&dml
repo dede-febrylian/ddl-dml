@@ -1,0 +1,30 @@
+CREATE DATABASE db_sekolah;
+
+CREATE TABLE siswa(
+nis varchar (10) PRIMARY KEY,
+nama varchar (50),
+kelas varchar (10),
+jurusan varchar (30),
+langgal_lahir date
+);
+
+CREATE TABLE mata_pelajaran(
+kode_mapel varchar (10) PRIMARY KEY,
+nama_mapel varchar (50),
+kkm int,
+guru_pengampu varchar (50)
+);
+
+CREATE TABLE nilai_sekolah(
+id int auto increment PRIMARY KEY,
+nis_id varchar (10),
+kode_mapel_id varchar (10), 
+nilai_angka int,
+semester int
+);
+
+ALTER TABLE siswa
+DROP COLUMN no_hp_otru varchar(15);
+
+ALTER TABLE mata_pelajaran
+DROP COLUMN guru_pengampu;
